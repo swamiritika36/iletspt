@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ieltspt/components/primary_btn.dart';
+import 'package:ieltspt/components/primary_textfield.dart';
 
 class IeltsloginPage extends StatelessWidget {
   const IeltsloginPage({super.key});
@@ -69,32 +71,8 @@ class IeltsloginPage extends StatelessWidget {
                     style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
                   ),
                   SizedBox(height: 7),
-                  TextField(
-                    decoration: InputDecoration(
-                      hintText: "email@example.com",
 
-                      hintStyle: TextStyle(color: Colors.blueGrey),
-                      contentPadding: EdgeInsets.symmetric(
-                        horizontal: 15,
-                        vertical: 15,
-                      ),
-
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.white),
-                        borderRadius: BorderRadius.circular(50),
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.white),
-                        borderRadius: BorderRadius.circular(50),
-                      ),
-                      border: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.white),
-                        borderRadius: BorderRadius.circular(50),
-                      ),
-                      fillColor: Colors.white,
-                      filled: true,
-                    ),
-                  ),
+                  PrimaryTextfield(hinttext: "Please enter your email"),
                 ],
               ),
             ),
@@ -112,31 +90,9 @@ class IeltsloginPage extends StatelessWidget {
                     style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
                   ),
                   SizedBox(height: 7),
-                  TextField(
-                    decoration: InputDecoration(
-                      hintText: "*********",
-                      suffixIcon: Icon(Icons.visibility_off),
-                      hintStyle: TextStyle(color: Colors.blueGrey),
-                      contentPadding: EdgeInsets.symmetric(
-                        horizontal: 15,
-                        vertical: 15,
-                      ),
-
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.white),
-                        borderRadius: BorderRadius.circular(50),
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.white),
-                        borderRadius: BorderRadius.circular(50),
-                      ),
-                      border: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.white),
-                        borderRadius: BorderRadius.circular(50),
-                      ),
-                      fillColor: Colors.white,
-                      filled: true,
-                    ),
+                  PrimaryTextfield(
+                    hinttext: "Please enter the password",
+                    suffixicon: Icons.visibility_off,
                   ),
                 ],
               ),
@@ -153,22 +109,7 @@ class IeltsloginPage extends StatelessWidget {
               ),
             ),
             SizedBox(height: 15),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 10),
-              width: double.infinity,
-              height: 50,
-              child: TextButton(
-                style: TextButton.styleFrom(
-                  backgroundColor: const Color(0xFFFF9C00),
-                  foregroundColor: Colors.white,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadiusGeometry.circular(50),
-                  ),
-                ),
-                child: Text('Login', style: TextStyle(fontSize: 14)),
-                onPressed: () {},
-              ),
-            ),
+            PrimaryBtn(text: "Login user", bgclr: Colors.black),
 
             SizedBox(height: 15),
             SizedBox(width: 176, height: 40),

@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:ieltspt/ieltslogin_page.dart';
-
-
-
+import 'package:ieltspt/auth/ieltslogin_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,6 +11,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home:IeltsloginPage());
+    return MaterialApp(home: IeltsloginPage());
   }
 }
