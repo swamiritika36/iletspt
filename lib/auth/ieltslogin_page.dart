@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ieltspt/auth/register_page.dart';
 import 'package:ieltspt/components/primary_btn.dart';
 import 'package:ieltspt/components/primary_textfield.dart';
 
@@ -153,13 +154,21 @@ class IeltsloginPage extends StatelessWidget {
                   "Don't have an account? ",
                   style: TextStyle(color: Colors.blueGrey, fontSize: 14),
                 ),
-                Text(
+                GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => RegisterPage()),
+        );
+      },
+             child:    Text(
                   "Register Now ",
                   style: TextStyle(
                     color: const Color.fromARGB(255, 76, 74, 177),
                     fontSize: 14,
                     fontWeight: FontWeight.w400,
                   ),
+                ),
                 ),
               ],
             ),

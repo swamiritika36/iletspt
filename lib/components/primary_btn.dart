@@ -13,7 +13,7 @@ class PrimaryBtn extends StatelessWidget {
       height: 50,
       child: TextButton(
         style: TextButton.styleFrom(
-          backgroundColor: bgclr == null ? Color(0xFFFF9C00) : bgclr,
+          backgroundColor: bgclr ?? const Color(0xFFFF9C00),
           foregroundColor: Colors.white,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadiusGeometry.circular(50),

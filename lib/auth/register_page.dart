@@ -36,7 +36,7 @@ class RegisterPage extends StatelessWidget {
                           style: TextStyle(
                             fontWeight: FontWeight.w500,
                             fontSize: 14,
-                            color:  Colors.blueGrey,
+                            color: Colors.blueGrey,
                           ),
                         ),
                         SizedBox(height: 7),
@@ -170,7 +170,7 @@ class RegisterPage extends StatelessWidget {
                         TextField(
                           decoration: InputDecoration(
                             hintText: "**********",
-                             suffixIcon: Icon(Icons.visibility_off),
+                            suffixIcon: Icon(Icons.visibility_off),
 
                             hintStyle: TextStyle(color: Colors.blueGrey),
                             contentPadding: EdgeInsets.symmetric(
@@ -215,16 +215,16 @@ class RegisterPage extends StatelessWidget {
                           color: const Color.fromARGB(255, 76, 74, 177),
                           fontSize: 15,
                           fontWeight: FontWeight.w500,
-                          
                         ),
                       ),
                     ],
                   ),
-                  Container(margin: EdgeInsets.only(left: 100),
-          height: 1.8, 
-          width: 58,   
-          color: Color.fromARGB(255, 76, 74, 177),
-        ),
+                  Container(
+                    margin: EdgeInsets.only(left: 100),
+                    height: 1.8,
+                    width: 58,
+                    color: Color.fromARGB(255, 76, 74, 177),
+                  ),
 
                   Row(
                     children: [
@@ -235,18 +235,18 @@ class RegisterPage extends StatelessWidget {
                           color: const Color.fromARGB(255, 76, 74, 177),
                           fontSize: 15,
                           fontWeight: FontWeight.w500,
-                         
                         ),
                       ),
-                    ]
+                    ],
                   ),
-                      
-        Container(margin: EdgeInsets.only(right: 90),
-          height: 1.8, 
-          width: 75,   
-          color: Color.fromARGB(255, 76, 74, 177),
-        ),
-                  
+
+                  Container(
+                    margin: EdgeInsets.only(right: 90),
+                    height: 1.8,
+                    width: 75,
+                    color: Color.fromARGB(255, 76, 74, 177),
+                  ),
+
                   SizedBox(width: 176, height: 40),
                   SizedBox(height: 15),
 
@@ -279,14 +279,12 @@ class RegisterPage extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(50),
                               ),
                               padding: EdgeInsets.all(5),
-                               
-                              
+
                               child: Image.asset(
                                 "assets/icons/callpic.png",
                                 height: double.infinity,
                                 width: double.infinity,
                                 fit: BoxFit.cover,
-                                
                               ),
                             ),
 
@@ -343,7 +341,10 @@ class RegisterPage extends StatelessWidget {
                                 SizedBox(width: 8),
                                 Text(
                                   'create Account',
-                                  style: TextStyle(fontSize: 18,fontWeight: FontWeight.w500),
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w500,
+                                  ),
                                 ),
                               ],
                             ),
