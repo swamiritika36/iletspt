@@ -11,7 +11,6 @@ class HomePage extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              width: double.infinity,
               height: 40,
               color: const Color.fromARGB(255, 211, 252, 232),
               padding: EdgeInsets.symmetric(horizontal: 10),
@@ -25,7 +24,7 @@ class HomePage extends StatelessWidget {
                     fit: BoxFit.cover,
                   ),
                   Image.asset(
-                    "assets/icons/vector.png",
+                    "assets/icons/Vector.png",
                     height: 21.22,
                     width: 19.33,
                     fit: BoxFit.cover,
@@ -41,57 +40,44 @@ class HomePage extends StatelessWidget {
 
               child: Column(
                 children: [
-                  SizedBox(  height: 181,
+                  SizedBox(
+                    height: 181,
                     width: 181,
-                    child: Image.asset(
-                      "assets/icons/girlpic.png",
-                    
-                    ),
+                    child: Image.asset("assets/icons/girlpic.png"),
                   ),
                   Container(
                     margin: EdgeInsets.only(top: 25),
                     width: 373,
                     height: 120,
-                    padding: EdgeInsets.symmetric(
-                      vertical: 10,
-                      horizontal: 30,
-                    ),
+                    padding: EdgeInsets.symmetric(vertical: 10, horizontal: 30),
                     decoration: BoxDecoration(
                       color: Colors.indigoAccent,
-              
+
                       borderRadius: BorderRadius.circular(10),
                     ),
-              
+
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
+
                       children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-              
-                          children: [
-                            Text(
-                              "Lorem Ipsum",
-                              style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.w700,
-                                color: Colors.white,
-                              ),
-                            ),
-                            SizedBox(height: 5),
-              
-                            Text(
-                              "Lorem ipsum dolor sit amet consectetur.Not purus sit mattis cras consectetur arcu. ",
-                              style: TextStyle(
-                                fontSize: 13,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ],
+                        Text(
+                          "Lorem Ipsum",
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w700,
+                            color: Colors.white,
+                          ),
+                        ),
+                        SizedBox(height: 5),
+
+                        Text(
+                          "Lorem ipsum dolor sit amet consectetur.Not purus sit mattis cras consectetur arcu. ",
+                          style: TextStyle(fontSize: 13, color: Colors.white),
                         ),
                       ],
                     ),
                   ),
-              
+
                   SizedBox(height: 15),
                   Container(
                     margin: EdgeInsets.symmetric(horizontal: 10),
@@ -101,13 +87,13 @@ class HomePage extends StatelessWidget {
                     child: TextField(
                       decoration: InputDecoration(
                         hintText: "Search Content here.",
-              
+
                         hintStyle: TextStyle(color: Colors.blueGrey),
                         contentPadding: EdgeInsets.symmetric(
                           horizontal: 15,
                           vertical: 15,
                         ),
-              
+
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: const Color.fromARGB(255, 173, 152, 152),
@@ -132,13 +118,6 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 15),
-                  SizedBox(
-                    width: 373,
-                    height: 271,
-                    child: Row(
-                      children: [Container(width: 180, height: 130)],
-                    ),
-                  ),
                 ],
               ),
             ),
