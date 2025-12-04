@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:ieltspt/constants/app_color.dart';
+import 'package:ieltspt/constants/app_img.dart';
 import 'package:ieltspt/page/personalprofile.dart';
 
 class Account extends StatelessWidget {
-  const Account({super.key});
+   const Account({super.key});
 
   BuildContext? get context => null;
+ 
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(backgroundColor: Colors.white,
+    return Scaffold(
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -17,19 +20,19 @@ class Account extends StatelessWidget {
               width: double.infinity,
 
               decoration: BoxDecoration(
-                color:AppColor.primaryClr,
+                color: AppColor.primaryClr,
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(40),
                   bottomRight: Radius.circular(40),
                 ),
               ),
               child: Padding(
-                padding: EdgeInsets.only(left: 111, top: 32.79, right: 69),
+                padding: EdgeInsets.only(left: 111, top: 32.79, right: 70),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(
-                      "assets/images/profile.png",
+                      AppImg.profile,
                       fit: BoxFit.contain,
                       height: 124,
                       width: 124,
@@ -68,45 +71,36 @@ class Account extends StatelessWidget {
                   _buildTextRow(
                     context,
                     "Personal Profile",
-                    "assets/images/parpro.png",
+                 AppImg.parpro,
                   ),
                   _buildTextRow(
                     context,
                     "My Courses",
-                    "assets/images/bookset.png",
+                    AppImg.bookset,
                   ),
                   SizedBox(height: 20),
                   _buildTextRow(
                     context,
                     "Contact Us",
-                    "assets/images/grhp.png",
+                   AppImg.grhp,
                   ),
 
                   _buildTextRow(
                     context,
                     "Help (Q & A)",
-                    "assets/images/quetion.png",
+                   AppImg.quetion,
                   ),
 
-                  _buildTextRow(context, "About us", "assets/images/rate.png"),
+                  _buildTextRow(context, "About us", AppImg.rate),
 
-                  _buildTextRow(
-                    context,
-                    "Rate or App",
-                    "assets/images/good.png",
-                  ),
+                  _buildTextRow(context, "Rate or App", AppImg.good),
 
-                  _buildTextRow(
-                    context,
-                    "Privacy Policy",
-                    "assets/images/policy.png",
-                  ),
+                  _buildTextRow(context, "Privacy Policy", AppImg.policy),
 
-                  _buildTextRow(
-                    context,
-                    "Terms & Conditions",
-                    "assets/images/terms.png",
-                  ),
+                  _buildTextRow(context, "Terms & Conditions", AppImg.terms),
+                  _buildTextRow(context, "Settings", AppImg.settings),
+                  SizedBox(height: 20),
+                  _buildTextRow(context, "Logout", AppImg.logout),
                 ],
               ),
             ),
@@ -151,7 +145,7 @@ class Account extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const Personalprofile(),
+                    builder: (context) =>  PersonalProfile(),
                   ),
                 );
               }
@@ -163,3 +157,4 @@ class Account extends StatelessWidget {
     );
   }
 }
+

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ieltspt/constants/app_color.dart';
+import 'package:ieltspt/constants/app_img.dart';
 
 class Circle extends StatelessWidget {
   const Circle({super.key});
@@ -91,7 +92,7 @@ class Circle extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(left: 8, bottom: 60,top: 8,right: 8),
               child: Image.asset(
-                "assets/images/contact.png",
+                AppImg.contact,
                 fit: BoxFit.contain,
                 height: 40,
                 width: 40,

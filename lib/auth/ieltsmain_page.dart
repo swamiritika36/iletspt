@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:ieltspt/components/bottomnevbar.dart';
 
 import 'package:ieltspt/components/primary_btn.dart';
+import 'package:ieltspt/constants/app_color.dart';
+import 'package:ieltspt/constants/app_img.dart';
+import 'package:ieltspt/page/home_page.dart';
 
 class IeltsmainPage extends StatefulWidget {
   const IeltsmainPage({super.key});
@@ -20,18 +23,18 @@ class _IeltsmainPageState extends State<IeltsmainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffEBF2F8),
+      backgroundColor: AppColor.bkgdc,
       body: SafeArea(
         child: Stack(
           children: [
             Align(
               alignment: AlignmentGeometry.bottomRight,
-              child: Image.asset("assets/images/half_circle.png"),
+              child: Image.asset(AppImg.halfcircle),
             ),
             Align(
               alignment: AlignmentGeometry.centerLeft,
 
-              child: Image.asset("assets/images/triangle.png"),
+              child: Image.asset(AppImg.triangle),
             ),
 
             Positioned(
@@ -39,7 +42,7 @@ class _IeltsmainPageState extends State<IeltsmainPage> {
               right: 0,
               bottom: 220,
               child: Image.asset(
-                "assets/images/fithangle.png",
+                AppImg.fithangle,
                 fit: BoxFit.contain,
                 height: 161,
                 width: 161,
@@ -49,7 +52,7 @@ class _IeltsmainPageState extends State<IeltsmainPage> {
               left: 70,
               top: 30,
               child: Image.asset(
-                "assets/images/Ellipse.png",
+                AppImg.ellipse,
                 fit: BoxFit.contain,
                 height: 35,
                 width: 35,
@@ -58,13 +61,13 @@ class _IeltsmainPageState extends State<IeltsmainPage> {
             Align(
               alignment: AlignmentGeometry.topRight,
 
-              child: Image.asset("assets/images/polygon.png"),
+              child: Image.asset(AppImg.polygon),
             ),
             Positioned(
               left: 80,
               bottom: 185,
               child: Image.asset(
-                "assets/images/greendot.png",
+                AppImg.greendot,
                 fit: BoxFit.contain,
                 height: 15,
                 width: 15,
@@ -74,7 +77,7 @@ class _IeltsmainPageState extends State<IeltsmainPage> {
               right: 80,
               top: 180,
               child: Image.asset(
-                "assets/images/ellipsebig.png",
+                AppImg.ellipsebig,
                 fit: BoxFit.contain,
                 height: 82,
                 width: 82,
@@ -99,7 +102,7 @@ class _IeltsmainPageState extends State<IeltsmainPage> {
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         Image.asset(
-          "assets/images/imagelogo.png",
+          AppImg.imagelogo,
           height: 100,
           width: 100,
           fit: BoxFit.cover,
@@ -113,7 +116,7 @@ class _IeltsmainPageState extends State<IeltsmainPage> {
               style: TextStyle(
                 fontWeight: FontWeight.w500,
                 fontSize: 18,
-                color: Color(0xFFFF807F),
+                color: AppColor.pich,
               ),
             ),
             Text(
@@ -121,7 +124,7 @@ class _IeltsmainPageState extends State<IeltsmainPage> {
               style: TextStyle(
                 fontWeight: FontWeight.w500,
                 fontSize: 18,
-                color: Color(0xFFDC18A4),
+                color: AppColor.pink,
               ),
             ),
           ],
@@ -134,7 +137,7 @@ class _IeltsmainPageState extends State<IeltsmainPage> {
               child: Text(
                 "Email Address",
                 style: TextStyle(
-                  color: Color(0xff000000),
+                  color: AppColor.textclr,
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -152,7 +155,7 @@ class _IeltsmainPageState extends State<IeltsmainPage> {
               child: Text(
                 "Password",
                 style: TextStyle(
-                  color: Color(0xff000000),
+                  color: AppColor.textclr,
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -196,6 +199,7 @@ class _IeltsmainPageState extends State<IeltsmainPage> {
               });
             });
           },
+          bgclr: Color(0xFFFF9C00),
         ),
 
         Text(
@@ -204,9 +208,20 @@ class _IeltsmainPageState extends State<IeltsmainPage> {
         ),
         PrimaryBtn(
           text: "Login with phone",
+          isLoading: isLoading,
+          onPressed: () {
+            setState(() {
+              isLoading = true;
+            });
+            Future.delayed(const Duration(seconds: 5), () {
+              setState(() {
+                isLoading = false;
+              });
+            });
+          },
 
           icons: Icon(Icons.call, color: Colors.white),
-          bgclr: Color.fromARGB(255, 52, 25, 203),
+          bgclr: AppColor.bluebtn,
         ),
 
         SizedBox(height: 15),
@@ -228,7 +243,7 @@ class _IeltsmainPageState extends State<IeltsmainPage> {
               child: Text(
                 "Register Now ",
                 style: TextStyle(
-                  color: const Color.fromARGB(255, 76, 74, 177),
+                  color: AppColor.bluebtn,
                   fontSize: 16,
                   fontWeight: FontWeight.w700,
                 ),
@@ -250,7 +265,7 @@ class _IeltsmainPageState extends State<IeltsmainPage> {
           style: TextStyle(
             fontWeight: FontWeight.w500,
             fontSize: 14,
-            color: Colors.blueGrey,
+            color: AppColor.blueGrey,
           ),
         ),
         SizedBox(height: 7),
@@ -259,7 +274,7 @@ class _IeltsmainPageState extends State<IeltsmainPage> {
           style: TextStyle(
             fontWeight: FontWeight.w900,
             fontSize: 24,
-            color: Color.fromARGB(255, 8, 8, 8),
+            color: AppColor.textclr,
           ),
         ),
         SizedBox(height: 15),
@@ -271,7 +286,7 @@ class _IeltsmainPageState extends State<IeltsmainPage> {
               child: Text(
                 "Full Name",
                 style: TextStyle(
-                  color: Color(0xff000000),
+                  color: AppColor.textclr,
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -284,7 +299,7 @@ class _IeltsmainPageState extends State<IeltsmainPage> {
               child: Text(
                 "Email Address",
                 style: TextStyle(
-                  color: Color(0xff000000),
+                  color: AppColor.textclr,
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -297,7 +312,7 @@ class _IeltsmainPageState extends State<IeltsmainPage> {
               child: Text(
                 "Password",
                 style: TextStyle(
-                  color: Color(0xff000000),
+                  color: AppColor.textclr,
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -321,16 +336,13 @@ class _IeltsmainPageState extends State<IeltsmainPage> {
           children: [
             Text(
               "I agree with the  ",
-              style: TextStyle(
-                color: const Color.fromARGB(255, 37, 44, 48),
-                fontSize: 14,
-              ),
+              style: TextStyle(color: AppColor.textclr, fontSize: 14),
             ),
             _buildUnderScore("terms & "),
             _buildUnderScore("conditions"),
           ],
         ),
-      
+
         SizedBox(height: 15),
         Text(
           "Or Register with",
@@ -343,9 +355,9 @@ class _IeltsmainPageState extends State<IeltsmainPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  _buildImageIcon(1.3, "assets/icons/callpic.png"),
+                  _buildImageIcon(1.3, AppImg.callpic),
                   SizedBox(width: 17),
-                  _buildImageIcon(5.3, "assets/icons/google.png"),
+                  _buildImageIcon(1, AppImg.google),
                 ],
               ),
             ],
@@ -375,6 +387,7 @@ class _IeltsmainPageState extends State<IeltsmainPage> {
                 MaterialPageRoute(builder: (context) => Bottomnevbar()),
               );
             },
+            bgclr: Color(0xFFFF9C00),
           ),
         ),
 
@@ -384,7 +397,7 @@ class _IeltsmainPageState extends State<IeltsmainPage> {
           children: [
             Text(
               "Already have an account? ",
-              style: TextStyle(color: Colors.blueGrey, fontSize: 15),
+              style: TextStyle(color: AppColor.blueGrey, fontSize: 15),
             ),
             TextButton(
               onPressed: onSwitch,
@@ -393,12 +406,22 @@ class _IeltsmainPageState extends State<IeltsmainPage> {
                 minimumSize: Size(0, 0),
                 tapTargetSize: MaterialTapTargetSize.shrinkWrap,
               ),
-              child: Text(
-                "Login Now ",
-                style: TextStyle(
-                  color: const Color.fromARGB(255, 76, 74, 177),
-                  fontSize: 17,
-                  fontWeight: FontWeight.w600,
+              child: TextButton(
+                onPressed: () {
+                  Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(builder: (_) => HomePage()),
+                    (route) => false,
+                  );
+                },
+
+                child: Text(
+                  "Login Now ",
+                  style: TextStyle(
+                    color: AppColor.bluebtn,
+                    fontSize: 17,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               ),
             ),
@@ -410,17 +433,16 @@ class _IeltsmainPageState extends State<IeltsmainPage> {
 
   Container _buildUnderScore(String name) {
     return Container(
-      // margin: EdgeInsets.only(left: 100),
       decoration: BoxDecoration(
         border: BoxBorder.fromLTRB(
-          bottom: BorderSide(width: 2, color: Color.fromARGB(255, 76, 74, 177)),
+          bottom: BorderSide(width: 2, color: AppColor.bluebtn),
         ),
       ),
 
       child: Text(
         name,
         style: TextStyle(
-          color: const Color.fromARGB(255, 76, 74, 177),
+          color: AppColor.bluebtn,
           fontSize: 15,
           fontWeight: FontWeight.w500,
         ),
@@ -441,8 +463,8 @@ class _IeltsmainPageState extends State<IeltsmainPage> {
           ),
         ],
         borderRadius: BorderRadius.circular(50),
-        border: Border.all(color: Colors.white),
-        color: Colors.white,
+        border: Border.all(color: AppColor.white),
+        color: AppColor.white,
       ),
 
       child: Image.asset(assetPath, scale: scale),
@@ -460,28 +482,28 @@ class _IeltsmainPageState extends State<IeltsmainPage> {
 
       decoration: InputDecoration(
         hintText: text,
-        hintStyle: TextStyle(color: Colors.blueGrey),
+        hintStyle: TextStyle(color: AppColor.blueGrey),
 
         suffixIcon: showIcon
             ? IconButton(
                 onPressed: onPressed,
                 icon: Icon(
                   obscure ? Icons.visibility_off : Icons.visibility,
-                  color: Colors.grey,
+                  color: AppColor.grey,
                 ),
               )
             : null,
 
         enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.white),
+          borderSide: BorderSide(color: AppColor.white),
           borderRadius: BorderRadius.circular(50),
         ),
         focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.white),
+          borderSide: BorderSide(color: AppColor.white),
           borderRadius: BorderRadius.circular(50),
         ),
         filled: true,
-        fillColor: Colors.white,
+        fillColor: AppColor.white,
       ),
     );
   }

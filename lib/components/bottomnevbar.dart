@@ -21,7 +21,7 @@ class _BottomnavbarState extends State<Bottomnevbar> {
     return Scaffold(
       body: _screens[selectedIndex],
 
-      bottomNavigationBar:
+      bottomNavigationBar: 
       Container(
   decoration: BoxDecoration(
     boxShadow: [
@@ -33,8 +33,9 @@ class _BottomnavbarState extends State<Bottomnevbar> {
     ],
   ),
   child:  BottomNavigationBar(
+    type: BottomNavigationBarType.fixed,
         showUnselectedLabels: true,
-
+ 
         selectedItemColor: Color(0xff6267DE),
         unselectedItemColor: Colors.grey,
 
@@ -50,10 +51,9 @@ class _BottomnavbarState extends State<Bottomnevbar> {
             backgroundColor: Colors.white,
             icon: Image.asset(
               "assets/images/iconhome.png",
-              // height: 24,
-              // width: 24,
+             
               fit: BoxFit.contain,
-              color: selectedIndex == 0 ? Color(0xff6267DE) : Colors.grey,
+              color: selectedIndex == 0 ? Color.fromARGB(255, 3, 14, 239) : const Color.fromARGB(255, 108, 108, 108),
             ),
 
             label: "Home",
@@ -61,20 +61,16 @@ class _BottomnavbarState extends State<Bottomnevbar> {
           BottomNavigationBarItem(
             icon: Image.asset(
               "assets/images/book.png",
-              // height: 24,
-              // width: 24,
+              
               fit: BoxFit.contain,
-              color: selectedIndex == 1 ? Color(0xff6267DE) : Colors.grey,
+              color: selectedIndex == 1 ? Color.fromARGB(255, 3, 14, 239): Color.fromARGB(255, 108, 108, 108),
             ),
             label: "Study",
           ),
           BottomNavigationBarItem(
             icon: Image.asset(
               "assets/images/hood.png",
-              // height: 24,
-              // width: 24,
-              // fit: BoxFit.contain,
-              color: selectedIndex == 2 ? Color(0xff6267DE) : Colors.grey,
+              color: selectedIndex == 2 ? Color.fromARGB(255, 3, 13, 239) : Color.fromARGB(255, 108, 108, 108),
             ),
             label: "Circle",
           ),
@@ -84,7 +80,7 @@ class _BottomnavbarState extends State<Bottomnevbar> {
               width: 20.25,
               height: 19.53,
               fit: BoxFit.contain,
-              color: selectedIndex == 3 ? Color(0xff6267DE) : Colors.grey,
+              color: selectedIndex == 3 ? Color.fromARGB(255, 3, 14, 239) :Color.fromARGB(255, 108, 108, 108),
             ),
             label: "Me",
           ),

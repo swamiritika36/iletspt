@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ieltspt/constants/app_color.dart';
+import 'package:ieltspt/constants/app_img.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -15,13 +16,13 @@ class HomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Image.asset(
-              "assets/images/imagelogo.png",
+              AppImg.imagelogo,
               height: 40,
               width: 39.26,
               fit: BoxFit.cover,
             ),
             Image.asset(
-              "assets/images/vector.png",
+              AppImg.bell,
               height: 21.22,
               width: 19.33,
               fit: BoxFit.cover,
@@ -31,230 +32,295 @@ class HomePage extends StatelessWidget {
       ),
 
       body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Container(
-              height: 40,
-              color: const Color.fromARGB(255, 211, 252, 232),
-            ),
-
-            SizedBox(
-              width: double.infinity,
-
-              child: Column(
-                children: [
-                  Stack(
-                    clipBehavior: Clip.none,
-                    children: [
-                      Container(
-                        width: 390,
-                        height: 120,
-                        padding: EdgeInsets.all(10),
-
-                        decoration: BoxDecoration(
-                          color: AppColor.primaryClr,
-
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-
-                          children: [
-                            Text(
-                              "Lorem Ipsum",
-                              style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.w700,
-                                color: Colors.white,
-                              ),
-                            ),
-                            SizedBox(height: 5),
-
-                            SizedBox(
-                              height: 50,
-                              width: 202,
-                              child: Text(
-                                "Lorem ipsum dolor sit amet consectetur.Not purus sit mattis cras consectetur arcu. ",
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w400,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Positioned(
-                        right: 2,
-                        top: -20,
-                        bottom: 0.5,
-                        child: Image.asset("assets/icons/girlpic.png"),
-                      ),
+        child:  Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Container(
+                height: 150,
+                decoration: BoxDecoration(
+                  gradient: const LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      Color.fromARGB(255, 211, 252, 232),
+                      Color.fromARGB(0, 255, 255, 255),
                     ],
                   ),
+                ),
+                child:Padding(
+          padding: const EdgeInsets.only(left: 8, right: 8),
+          child: 
+                Column(
+                  children: [
+                    Stack(
+                      clipBehavior: Clip.none,
+                      children: [
+                        Container(
+                          margin: EdgeInsets.only(top: 30),
+                          width: 390,
+                          height: 120,
+                          padding: EdgeInsets.all(10),
 
-                  SizedBox(height: 15),
-                  Padding(
-                    padding: const EdgeInsets.only(right: 4, left: 4),
-                    child: Container(
-                      width: 373,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: TextField(
-                        decoration: InputDecoration(
-                          hintText: "Search Content here.",
+                          decoration: BoxDecoration(
+                            color: AppColor.primaryClr,
 
-                          hintStyle: TextStyle(
-                            color: const Color.fromARGB(255, 161, 162, 163),
-                          ),
-                          suffixIcon: Icon(
-                            Icons.search,
-                            size: 35,
-                            color: const Color.fromARGB(255, 59, 152, 199),
-                          ),
-                          contentPadding: EdgeInsets.symmetric(
-                            horizontal: 15,
-                            vertical: 15,
-                          ),
-
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: const Color.fromARGB(255, 173, 152, 152),
-                            ),
-                            
-                           
                             borderRadius: BorderRadius.circular(10),
                           ),
 
-                          fillColor: Colors.white,
-                          filled: true,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+
+                            children: [
+                              Text(
+                                "Lorem Ipsum",
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              SizedBox(height: 5),
+
+                              SizedBox(
+                                height: 50,
+                                width: 202,
+                                child: Text(
+                                  "Lorem ipsum dolor sit amet consectetur.Not purus sit mattis cras consectetur arcu. ",
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+
+                        Positioned(
+                          right: -0.5,
+                          top: 8,
+                          bottom: -0.5,
+                          child: Image.asset(AppImg.girlpic,height: 144,width: 170,),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              ),
+              SizedBox(height: 15),
+              Padding(
+                padding: const EdgeInsets.only(left: 8,right: 8),
+                child: Container(
+                  width: 373,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: "Search Content here.",
+                      hintStyle: TextStyle(
+                        color: const Color.fromARGB(255, 161, 162, 163),
+                      ),
+                      suffixIcon: Icon(
+                        Icons.search,
+                        size: 35,
+                        color: const Color.fromARGB(255, 59, 152, 199),
+                      ),
+                      contentPadding: EdgeInsets.symmetric(
+                        horizontal: 15,
+                        vertical: 15,
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: const Color.fromARGB(255, 173, 152, 152),
                         ),
                       ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: const Color.fromARGB(255, 173, 152, 152),
+                        ),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      fillColor: Colors.white,
+                      filled: true,
                     ),
                   ),
-                  SizedBox(height: 15),
-                  GridView.custom(
-                    padding: EdgeInsets.all(10),
-                    shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      crossAxisSpacing: 7,
-                      mainAxisSpacing: 10,
-                      childAspectRatio: 1.25,
+                ),
+              ),
+              SizedBox(height: 15),
+              Padding(
+                padding: const EdgeInsets.only(left: 8,right: 8),
+                child: GridView.custom(
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 7,
+                    mainAxisSpacing: 2,
+                    childAspectRatio: 1.2,
+                  ),
+                  childrenDelegate: SliverChildListDelegate([
+                    // speaking
+                    _buildCard(
+                      txtLeft: false,
+                      bgColor: Color(0xFFC5FBFF),
+                      padding: EdgeInsets.only(left: 0),
+                      title: "Speaking",
+                      color: Color(0xFF02949D),
+                      subTitle: "AI Score\nPronunciation",
+                      top: 30,
+                      right: 0.17,
+                      bottom: 0,
+                      left: 74,
+                      imagePath: AppImg.doctor,
+                      imageHeight: 50,
+                      imageWidth: 105,
+                      imageLeft: false,
                     ),
-                    childrenDelegate: SliverChildListDelegate([
-                      // speaking
-                      _buildCard(
-                        bgColor: Color(0xFFC5FBFF),
-                        title: "Speaking",
-                        color: Color(0xFF02949D),
-                        subTitle: "AI Score Pronunciation",
-                        textAlign: "left",
-                       top: 30,right: -5,bottom: 4,left: 55,
-                        imagePath: "assets/images/doctor.png",
-                        imageHeight: 50,
-                        imageWidth: 105,
-                        imageLeft: false,
-                    
-                      ),
-
-                      // Writing
-                      _buildCard(
-                        bgColor: Color(0xFFFFEAEA),
-                        title: "Writing",
-                        color: Color(0xffBD5656),
-                        subTitle: "AI Score Correction",
-                        textAlign: "right",
-                         top: 20,right:70,bottom: 5,left: 1,
-                        imagePath: "assets/images/girlwond.png",
-                        imageHeight: 50,
-                        imageWidth: 41.58,
-                        imageLeft: true,
-                      
-                      ),
-
-                      // Reading
-                      _buildCard(
-                        bgColor: Color(0xFFE7FFD4),
-                        title: "Reading",
-                        color: Color(0xff4F9A14),
-                        subTitle: "Immediate Feedback",
-                        textAlign: "left",
-                         top: 40,right: -40,bottom: 4,left: 20,
-                        imagePath: "assets/images/girlbook.png",
-                        imageHeight: 85,
-                        imageWidth: 115.13,
-                        imageLeft: false,
-                    
-                      ),
-                      // listening
-                      _buildCard(
-
-                        bgColor: Color(0xFFCFD1FF),
-                        title: "Listening",
-                        color: Color(0xff3C448C),
-                        subTitle: "Daily Updated",
-                        textAlign: "right",
-                       top: -10,right: 45,bottom: -55,left: 0,
-                        imagePath: "assets/images/girlhp.png",
-                        imageLeft: true,
-                        imageHeight: 83,
-                        imageWidth: 127.3,
-                    
-                      ),
-                    ]),
-                  ),
-                ],
-              ),
-            ),
-
-            Align(alignment: AlignmentGeometry.centerLeft,
-              child: Text(
-                "Our Study Tools",
-              
-                textAlign: TextAlign.start,
-                style: TextStyle(
-                  fontWeight: FontWeight.w700,
-                  color: Colors.black,
-                  fontSize: 16,
+                    // Writing
+                    _buildCard(
+                      txtLeft: true,
+                      bgColor: Color(0xFFFFEAEA),
+                      padding: EdgeInsets.only(right: 5),
+                      title: "Writing",
+                      color: Color(0xffBD5656),
+                      subTitle: "AI Score\nCorrection",
+                      top: 29,
+                      right: 100,
+                      bottom: -10,
+                      left: 1,
+                      imagePath: AppImg.girlwond,
+                      imageHeight: 50,
+                      imageWidth: 41.58,
+                      imageLeft: true,
+                    ),
+                    // Reading
+                    _buildCard(
+                      txtLeft: false,
+                      bgColor: Color(0xFFE7FFD4),
+                      padding: EdgeInsets.only(left: 0),
+                      title: "Reading",
+                      color: Color(0xff4F9A14),
+                      subTitle: "Immediate\nFeedback",
+                      top: 43,
+                      right: 0.13,
+                      bottom: 0,
+                      left: 65,
+                      imagePath: AppImg.girlbook,
+                      imageHeight: 85,
+                      imageWidth: 115.13,
+                      imageLeft: false,
+                    ),
+                    // listening
+                    _buildCard(
+                      txtLeft: false,
+                      bgColor: Color(0xFFCFD1FF),
+                      padding: EdgeInsets.only(right: 0),
+                      title: "Listening  ",
+                      color: Color(0xff3C448C),
+                      subTitle: "Daily Updated",
+                      top: 45,
+                      right: 52.5,
+                      bottom: 0,
+                      left: 0,
+                      imagePath: AppImg.girlhp,
+                      imageLeft: true,
+                      imageHeight: 83,
+                      imageWidth: 120.3,
+                    ),
+                  ]),
                 ),
               ),
-            ),
 
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Flexible(
-                  child: _buildTools("Vocab Books", "assets/images/text.png"),
-                ),
-                Flexible(
-                  child: _buildTools(
-                    "Shadow Readina",
-                    "assets/images/voice.png",
+              Padding(
+                padding: const EdgeInsets.only(left: 8),
+                child: Align(
+                  alignment: AlignmentGeometry.centerLeft,
+                  child: Text(
+                    "Our Study Tools",
+                    textAlign: TextAlign.start,
+                    style: TextStyle(
+                      fontWeight: FontWeight.w700,
+                      color: Colors.black,
+                      fontSize: 16,
+                    ),
                   ),
                 ),
-                Flexible(
-                  child: _buildTools(
-                    "Listening MP3",
-                    "assets/images/handp.png",
+              ),
+
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    _buildTools("Vocab Books", AppImg.text),
+                    _buildTools("Shadow Readina", AppImg.voice),
+                    _buildTools("Listening MP3", AppImg.handp),
+                    _buildTools("Group study", AppImg.group),
+                  ],
+                ),
+              ),
+
+              SizedBox(height: 10),
+              Padding(
+                padding: const EdgeInsets.only(left: 8),
+                child: Align(
+                  alignment: AlignmentGeometry.centerLeft,
+                  child: Text(
+                    "Events",
+                
+                    textAlign: TextAlign.start,
+                    style: TextStyle(
+                      fontWeight: FontWeight.w700,
+                      color: Colors.black,
+                      fontSize: 16,
+                    ),
                   ),
                 ),
-
-                Flexible(
-                  child: _buildTools("Group study", "assets/images/group.png"),
+              ),
+              SizedBox(height: 10),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  width: 390,
+                
+                  padding: EdgeInsets.only(
+                    left: 10,
+                    top: 10,
+                    right: 14,
+                    bottom: 10,
+                  ),
+                  decoration: BoxDecoration(
+                    color: AppColor.primaryClr,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                
+                    children: [
+                      SizedBox(
+                        width: 219,
+                        child: Text(
+                          "Lorem ipsum dolor sit amet consectetur.Lectus sed auctor amet tellus sem odio.",
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ),
+                      _buildStarts("Join Now", Color(0xffFF9C00)),
+                    ],
+                  ),
                 ),
-              ],
-            ),
-
-            SizedBox(height: 10),
-          ],
+              ),
+            ],
+          ),
         ),
-      ),
+      
     );
   }
 
@@ -266,12 +332,7 @@ class HomePage extends StatelessWidget {
           height: 100,
           width: 66,
 
-          child: Image.asset(
-            imagePath,
-            fit: BoxFit.contain,
-            height: 66,
-            width: 66,
-          ),
+          child: Image.asset(imagePath, fit: BoxFit.contain),
         ),
 
         SizedBox(
@@ -291,40 +352,28 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  TextAlign _buildTextAlign(String value) {
-    switch (value.toLowerCase()) {
-      case "center":
-        return TextAlign.center;
-      case "right":
-        return TextAlign.right;
-      case "left":
-      default:
-        return TextAlign.left;
-    }
-  }
+
 
 
   Widget _buildCard({
-  required Color bgColor,
-  required String title,
-  required dynamic color,
-  required String subTitle,
-  required String textAlign,
-  required String imagePath,
-  required bool imageLeft,
-  required double imageHeight,
-  required double imageWidth,
-  required double top,
-  required double bottom,
-  required double left,
-  required double right,
-}) {
-  return Container(
-    width: 170,
-    height: 130,
-    child: Stack(
+    required double top,
+    required double left,
+    required String title,
+    required dynamic color,
+    required double bottom,
+    required double right,
+    required Color bgColor,
+    required bool imageLeft,
+    required bool txtLeft,
+    required dynamic padding,
+    required String subTitle,
+    required String imagePath,
+    required double imageWidth,
+    required double imageHeight,
+  }) {
+    return Stack(
       children: [
-        // Background color container
+
         Container(
           width: 170,
           height: 130,
@@ -334,7 +383,7 @@ class HomePage extends StatelessWidget {
           ),
         ),
 
-        // Positioned Image
+
         Positioned(
           top: top,
           bottom: bottom,
@@ -348,55 +397,63 @@ class HomePage extends StatelessWidget {
           ),
         ),
 
-        // Texts and other widgets
-        Positioned(
-          top: 10,
-          left: imageLeft ? null : 10,
-          right: imageLeft ? 10 : null,
-          child: Column(
-            crossAxisAlignment:
-                imageLeft ? CrossAxisAlignment.end : CrossAxisAlignment.start,
-            children: [
-              Text(
-                title,
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w500,
-                  color: color,
+        Align(
+          alignment: imageLeft ? Alignment.centerRight : Alignment.centerLeft,
+
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              crossAxisAlignment: imageLeft
+                  ? CrossAxisAlignment.end
+                  : CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: txtLeft
+                      ? const EdgeInsets.symmetric(horizontal: 15)
+                      : EdgeInsets.all(0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        title,
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                          color: color,
+                        ),
+                      ),
+                      Text(
+                        subTitle,
+                        textAlign: TextAlign.start,
+
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Color(0xFF5C5C5C),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-              SizedBox(height: 2),
-              SizedBox(
-                height: 42,
-                width: 100,
-                child: Text(
-                  subTitle,
-                  textAlign: _buildTextAlign(textAlign),
-                  style: TextStyle(fontSize: 12, color: Color(0xFF5C5C5C)),
-                ),
-              ),
-              SizedBox(height: 5),
-              _buildStarts("Start"),
-            ],
+
+                SizedBox(height: 15),
+                _buildStarts("Start", Color(0xFFFF9C00)),
+              ],
+            ),
           ),
         ),
       ],
-    ),
-  );
-}
+    );
+  }
 
-
-  Container _buildStarts(String text) {
+  Container _buildStarts(String text, dynamic color) {
     return Container(
-      height: 25,
-
-      width: 48,
-
+      margin: EdgeInsets.only(bottom: 22),
       decoration: BoxDecoration(
-        color: Color(0xFFFF9C00),
+        color: color,
         borderRadius: BorderRadius.circular(50),
       ),
-      padding: EdgeInsets.symmetric(horizontal: 1, vertical: 2),
+      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       child: Text(
         text,
         style: TextStyle(color: Colors.white),

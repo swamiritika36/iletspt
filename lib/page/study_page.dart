@@ -29,7 +29,7 @@ class _StudyPageState extends State<StudyPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     
+      
       backgroundColor: Colors.white,
       body: Padding(
         padding: EdgeInsets.only(top: 40, left: 10, right: 10),
@@ -37,53 +37,28 @@ class _StudyPageState extends State<StudyPage> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              Row(
-                children: [
-                  Text(
-                    "Our Study Tools",
-                    style: TextStyle(
-                      fontWeight: FontWeight.w700,
-                      color: Colors.black,
-                      fontSize: 16,
-                    ),
-                    textAlign: TextAlign.start,
-                  ),
-                ],
-              ),
+              _buildHeadline("Our Study Tools"),
               SizedBox(height: 10),
 
               SizedBox(
                 width: 373,
                 child: Column(
+                  mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Flexible(
-                          child: _buildTools(
-                            "Vocab\n Books",
-                            "assets/images/text.png",
-                          ),
+                        _buildTools("Vocab\n Books",AppImg.text),
+                        _buildTools(
+                          "Shadow Readina",
+                          AppImg.voice,
                         ),
-                        Flexible(
-                          child: _buildTools(
-                            "Shadow Readina",
-                            "assets/images/voice.png",
-                          ),
+                        _buildTools(
+                          "Listening\n MP3",
+                         AppImg.handp,
                         ),
-                        Flexible(
-                          child: _buildTools(
-                            "Listening\n MP3",
-                            "assets/images/handp.png",
-                          ),
-                        ),
-                        Flexible(
-                          child: _buildTools(
-                            "Group\n study",
-                            "assets/images/group.png",
-                          ),
-                        ),
+                        _buildTools("Group\n study",AppImg.group ),
                       ],
                     ),
 
@@ -95,15 +70,12 @@ class _StudyPageState extends State<StudyPage> {
                         Flexible(
                           child: _buildTools(
                             "Download\n Materials",
-                            "assets/images/download.png",
+                            AppImg.download,
                           ),
                         ),
                         SizedBox(width: 25),
                         Flexible(
-                          child: _buildTools(
-                            "Mock\n Tests",
-                            AppImg.mock,
-                          ),
+                          child: _buildTools("Mock\n Tests", AppImg.mock),
                         ),
                       ],
                     ),
@@ -113,33 +85,16 @@ class _StudyPageState extends State<StudyPage> {
               SizedBox(height: 10),
               Divider(color: Colors.grey, thickness: 0.5),
               SizedBox(height: 10),
-              Container(
-                height: 40,
-                width: 373,
-                alignment: Alignment.centerLeft,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Text(
-                  "Vocab Books",
-                  style: TextStyle( 
-                    fontFamily: "Montserrat",
-                    fontWeight: FontWeight.w700,
-                    color: Colors.black,
-                    fontSize: 16,
-                  ),
-                ),
-              ),
-              // SizedBox(height: 10),
+              _buildHeadline("Vocab Books"),
 
               GridView.builder(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 4,
-                  // childAspectRatio: 1,
+
                 ),
+
                 itemCount: vocabBooks.length,
                 itemBuilder: (context, index) {
                   return _buildVocabooks(vocabBooks[index]);
@@ -149,23 +104,8 @@ class _StudyPageState extends State<StudyPage> {
               SizedBox(height: 10),
               Divider(color: Colors.grey, thickness: 0.5),
               SizedBox(height: 10),
-              Container(
-                height: 40,
-                width: 373,
-                alignment: Alignment.centerLeft,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Text(
-                  "Listening MP3",
-                  style: TextStyle(
-                    fontWeight: FontWeight.w700,
-                    color: Colors.black,
-                    fontSize: 16,
-                  ),
-                ),
-              ),
+              _buildHeadline("Listening MP3"),
+
               SizedBox(height: 10),
               GridView.count(
                 crossAxisCount: 4,
@@ -181,23 +121,24 @@ class _StudyPageState extends State<StudyPage> {
 
               Divider(color: Colors.grey, thickness: 0.5),
               SizedBox(height: 10),
-              // SizedBox(height: 20),
-              // Container(
-              //   width: double.infinity,
-              //   height: 64,
-              //   decoration: BoxDecoration(
-              //     color: Colors.white,
-              //     boxShadow: [
-              //       BoxShadow(
-              //         color: Colors.grey,
-              //         offset: Offset(0, -3),
-              //         blurRadius: 6,
-              //       ),
-              //     ],
-              //   ),
-              // ),
+
             ],
           ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildHeadline(String text) {
+    return Align(
+      alignment: AlignmentGeometry.centerLeft,
+      child: Text(
+        text,
+        textAlign: TextAlign.start,
+        style: TextStyle(
+          fontWeight: FontWeight.w700,
+          color: Colors.black,
+          fontSize: 16,
         ),
       ),
     );
@@ -211,7 +152,7 @@ class _StudyPageState extends State<StudyPage> {
       ),
       child: Column(
         children: [
-          Image.asset("assets/images/play.png", fit: BoxFit.contain),
+          Image.asset(AppImg.play, fit: BoxFit.contain),
           Text(
             text,
             style: TextStyle(fontSize: 12),
@@ -234,7 +175,7 @@ class _StudyPageState extends State<StudyPage> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Image.asset("assets/images/emobook.png"),
+          Image.asset(AppImg.emobook),
           SizedBox(height: 3),
           Text(
             text,
